@@ -1,0 +1,45 @@
+image: node:6
+
+stages:
+#  - test
+  - build
+  - deploy
+
+cache:
+  paths:
+    - node_modules/
+
+#test:
+#  stage: test
+#  script:
+#    - yarn install
+#    - yarn test
+
+build:
+  stage: build
+  script:
+    - yarn install --frozen-lockfile
+    - yarn build
+
+pages:
+  stage: deploy
+  script:
+    # deploy to gh-pages branch
+    - cd public
+    - git init
+    - git config user.name "$GITLAB_USER_NAME"
+    - git config user.email "$GITLAB_USER_EMAIL"
+    - git remote add origin https://$GITLAB_PAGES_USER:$GITLAB_PAGES_PASS@$(echo $CI_REPOSITORY_URL | cut -d'@' -f2)
+    - git fetch && git reset origin/gh-pages || git checkout -b gh-pages $(git rev-list --max-parents=0 HEAD)
+    - touch .
+    - git add -A .
+    - 'git commit -m "CI: Build of ${CI_COMMIT_SHA}"'
+    - git push origin HEAD:gh-pages
+    - rm -rf .git
+
+  artifacts:
+    # deploy to gitlab pages
+    paths:
+      - public
+  only:
+    - master
