@@ -31,8 +31,10 @@ import autoprefixer from 'gulp-autoprefixer';
 
 import helperFuncs from './src/scripts/utils/helperFuncs';
 
+// Note: sitePath is the site's base path path with slash
+// prefix, without trailing slash (unless empty stays empty).
 const siteHost      = (process.env.SITE_HOST || 'https://hkoscon.org').replace(/\/$/, '');
-const sitePath      = '/' + (process.env.SITE_PATH || '2016').replace(/^(\/|)(.+?)(\/|)$/, '$2'); // path with slash prefix, without trailing slash
+const sitePath      = (process.env.SITE_PATH || '2016').replace(/^(\/|)(.*?)(\/|)$/, '/$2').replace(/^\/$/, '');
 const baseTarget    = `${__dirname}/public`;
 const assetsTarget  = `${baseTarget}/assets`;
 const stylesTarget  = `${assetsTarget}/css`;
@@ -48,6 +50,10 @@ const scriptsSource = `${baseSource}/scripts`;
 const dataSource    = `${baseSource}/data`;
 const fontsSource   = `${baseSource}/fonts`;
 const imagesSource  = `${baseSource}/images`;
+
+// export some paths to global
+global.siteHost = siteHost;
+global.sitePath = sitePath;
 
 function parseJSON(filename) {
   try {
