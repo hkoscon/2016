@@ -31,6 +31,8 @@ import autoprefixer from 'gulp-autoprefixer';
 
 import helperFuncs from './src/scripts/utils/helperFuncs';
 
+const siteHost      = (process.env.SITE_HOST || 'https://hkoscon.org').replace(/\/$/, '');
+const sitePath      = '/' + (process.env.SITE_PATH || '2016').replace(/^(\/|)(.+?)(\/|)$/, '$2'); // path with slash prefix, without trailing slash
 const baseTarget    = `${__dirname}/public`;
 const assetsTarget  = `${baseTarget}/assets`;
 const stylesTarget  = `${assetsTarget}/css`;
@@ -71,7 +73,8 @@ function getData(dataSource) {
   let data = {
     "now":       moment().utcOffset("+08:00"),
     "timeHash":  timeHash(),
-    "site_host": "http://2016.opensource.hk"
+    "site_host": siteHost,
+    "site_path": sitePath,
   };
 
   // read every json file in the dataSource directory
