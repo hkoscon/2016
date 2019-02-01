@@ -128,7 +128,7 @@ function topicSummary(data, id) {
 // topicURL generator
 function topicURL (type, id) {
   if (type == 'topic') {
-    return `/topics/${id}/`;
+    return `${sitePath}/topics/${id}/`;
   }
 }
 

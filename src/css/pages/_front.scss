@@ -1,7 +1,7 @@
 @media (min-width: $width-md) {
   #introjumbo {
     background-color: $theme-blue;
-    background-image: url("/assets/images/hkoscon-2015-ckk.jpg");
+    background-image: url('../images/hkoscon-2015-ckk.jpg');
     background-size: cover;
     background-position: bottom;
     background-attachment: fixed;
@@ -82,7 +82,7 @@
 
 #promotion-video {
   display: block;
-  background-image: url('/assets/images/noun_10352_100.png');
+  background-image: url('../images/noun_10352_100.png');
   background-size: cover;
   width: 80px;
   height: 60px;

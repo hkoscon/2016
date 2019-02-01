@@ -31,6 +31,10 @@ import autoprefixer from 'gulp-autoprefixer';
 
 import helperFuncs from './src/scripts/utils/helperFuncs';
 
+// Note: sitePath is the site's base path path with slash
+// prefix, without trailing slash (unless empty stays empty).
+const siteHost      = (process.env.SITE_HOST || 'https://hkoscon.org').replace(/\/$/, '');
+const sitePath      = (process.env.SITE_PATH || '2016').replace(/^(\/|)(.*?)(\/|)$/, '/$2').replace(/^\/$/, '');
 const baseTarget    = `${__dirname}/public`;
 const assetsTarget  = `${baseTarget}/assets`;
 const stylesTarget  = `${assetsTarget}/css`;
@@ -46,6 +50,10 @@ const scriptsSource = `${baseSource}/scripts`;
 const dataSource    = `${baseSource}/data`;
 const fontsSource   = `${baseSource}/fonts`;
 const imagesSource  = `${baseSource}/images`;
+
+// export some paths to global
+global.siteHost = siteHost;
+global.sitePath = sitePath;
 
 function parseJSON(filename) {
   try {
@@ -69,9 +77,10 @@ function timeHash() {
 // instead of `require` (will cache the file)
 function getData(dataSource) {
   let data = {
-    "now":       moment().utcOffset("+08:00"),
+    "now":       moment().utcOffset("+08:00").format('Do MMMM YYYY'),
     "timeHash":  timeHash(),
-    "site_host": "http://2016.opensource.hk"
+    "site_host": siteHost,
+    "site_path": sitePath,
   };
 
   // read every json file in the dataSource directory
@@ -110,7 +119,7 @@ gulp.task('serve-dev', function() {
     output: {
       path: path.join(__dirname, 'public/assets/scripts'),
       filename: 'bundle.js',
-      publicPath: '/assets/scripts/'
+      publicPath: sitePath + '/assets/scripts/'
     },
     plugins: [
       new webpack.HotModuleReplacementPlugin()
@@ -232,8 +241,8 @@ gulp.task('pages', function() {
         "https://cdnjs.cloudflare.com/ajax/libs/react-redux/4.4.5/react-redux.min.js",
         "https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js",
         "https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js",
-        "/assets/scripts/vendors.js",
-        "/assets/scripts/bundle.js?" + rawData.timeHash
+        sitePath + "/assets/scripts/vendors.js",
+        sitePath + "/assets/scripts/bundle.js?" + rawData.timeHash
       ]
     },
     rawData,

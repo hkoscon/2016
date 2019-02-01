@@ -1,6 +1,6 @@
 {% extends '../../../layouts/default.html' %}
 
-{% block og_url %}{{ site_host }}/schedule/static/{% endblock %}
+{% block og_url %}{{ site_host }}{{ site_path }}/schedule/static/{% endblock %}
 
 {% block title %}Schedule (Static){% endblock %}
 
@@ -23,7 +23,7 @@
 
     <div class="row">
         <h1>Schedule (Tentative)</h1>
-        <p>The agenda is last updated on <strong><u>{{ now.format('Do MMMM YYYY') }}</u></strong>. Sessions are subject to changes without notice.</p>
+        <p>The agenda is last updated on <strong><u>{{ now }}</u></strong>. Sessions are subject to changes without notice.</p>
         <p>The full list of topics can also be found <a href="/topics/">here</a>.</p>
     </div>
 
