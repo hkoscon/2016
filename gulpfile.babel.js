@@ -77,7 +77,7 @@ function timeHash() {
 // instead of `require` (will cache the file)
 function getData(dataSource) {
   let data = {
-    "now":       moment().utcOffset("+08:00"),
+    "now":       moment().utcOffset("+08:00").format('Do MMMM YYYY'),
     "timeHash":  timeHash(),
     "site_host": siteHost,
     "site_path": sitePath,
