@@ -22,7 +22,7 @@ it is recommended to download from [https://nodejs.org](https://nodejs.org) and 
 ```bash
 su
 tar xvf node-<VERSION>-linux-*.tar.xz -C /usr/local --strip-components=1
-npm install -g npm
+npm install -g yarn
 ```
 
 ### for Ubuntu, Debian
@@ -32,7 +32,7 @@ it is recommended to download from [https://nodejs.org](https://nodejs.org) and 
 
 ```bash
 sudo tar xvf node-<VERSION>-linux-*.tar.xz -C /usr/local --strip-components=1
-sudo npm install -g npm
+sudo npm install -g yarn
 ```
 
 In Ubuntu, please follow these commands to install with `apt-get` :
@@ -53,13 +53,13 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 brew install node
 ```
 
-### After installing node and npm
+### After installing node and yarn
 
 You'd need to install node packages for the repository. Go into the folder
 that contain this file. Run this command:
 
 ```bash
-npm install
+yarn install
 ```
 
 
@@ -74,6 +74,7 @@ The repository contains these files and folders:
 ```
 gulpfile.js   - gulp automation files, like Makefile in nodejs
 package.json  - node js configurations
+yarn.lock     - node js library version lock file
 README.MD     - this file
 configs/      - config files for the generation process
 public/       - all files in this folder is generated from src
