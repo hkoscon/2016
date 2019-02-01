@@ -23,7 +23,7 @@
       "name": "Droste",
       "url": "http://droste.hk"
     },
-    "portrait": "/assets/images/speakers/mart.jpg",
+    "portrait": "/2016/assets/images/speakers/mart.jpg",
     "hkoscon-sponsored": false
   },
   "masahiro-nakagawa": {
@@ -246,7 +246,7 @@
       "name": "Mozilla Hong Kong",
       "url": "http://moz.hk/"
     },
-    "portrait": "/assets/images/speakers/fhoshino.jpg",
+    "portrait": "/2016/assets/images/speakers/fhoshino.jpg",
     "hkoscon-sponsored": false
   },
   "gary-kwong": {
@@ -349,7 +349,7 @@
       "name": "HKCOTA",
       "url": "http://www.cota.hk/"
     },
-    "portrait": "/assets/images/speakers/haggen.jpg",
+    "portrait": "/2016/assets/images/speakers/haggen.jpg",
     "hkoscon-sponsored": false
   },
   "chris-choy": {
@@ -522,7 +522,7 @@
       "name": "OurSky",
       "url": "https://oursky.com"
     },
-    "portrait": "/assets/images/speakers/david-ng.jpg",
+    "portrait": "/2016/assets/images/speakers/david-ng.jpg",
     "hkoscon-sponsored": false
   },
   "thomas-kulper": {
@@ -583,7 +583,7 @@
       "name": "Oracle",
       "url": "https://www.oracle.com/"
     },
-    "portrait": "/assets/images/speakers/ryusukekajiyama.jpg",
+    "portrait": "/2016/assets/images/speakers/ryusukekajiyama.jpg",
     "hkoscon-sponsored": false
   },
   "joshua-rich": {
@@ -605,7 +605,7 @@
       "name": "Elastic",
       "url": "https://www.elastic.co/"
     },
-    "portrait": "/assets/images/speakers/josh.jpg",
+    "portrait": "/2016/assets/images/speakers/josh.jpg",
     "hkoscon-sponsored": false
   },
 
@@ -674,7 +674,7 @@
       "name": "National Cheng Kung University, Taiwan / 台灣國立成功大學",
       "url": "http://web.ncku.edu.tw/bin/home.php"
     },
-    "portrait": "/assets/images/speakers/jserv.jpg",
+    "portrait": "/2016/assets/images/speakers/jserv.jpg",
     "hkoscon-sponsored": false
   },
   "fabio-rapposelli": {
@@ -697,7 +697,7 @@
       "name": "VMWare",
       "url": "https://www.vmware.com/"
     },
-    "portrait": "/assets/images/speakers/frapposelli.png",
+    "portrait": "/2016/assets/images/speakers/frapposelli.png",
     "hkoscon-sponsored": false
   },
   "bart-verkoeijen": {
@@ -744,7 +744,7 @@
       "name": "IBM",
       "url": "https://www.ibm.com/hk/"
     },
-    "portrait": "/assets/images/speakers/alfred-tse.jpg",
+    "portrait": "/2016/assets/images/speakers/alfred-tse.jpg",
     "hkoscon-sponsored": false
   },
 
