@@ -43,6 +43,8 @@ pages:
   artifacts:
     paths:
       - public
+  only:
+    - master
 
 deploy:gh-pages:
   stage: deploy
@@ -64,4 +66,5 @@ deploy:gh-pages:
     - 'git commit -m "CI: Build of ${CI_COMMIT_SHA}"'
     - git push origin HEAD:gh-pages
     - rm -rf .git
-
+  only:
+    - /^release-.*$/
